@@ -1,0 +1,171 @@
+/* General Page Setup */
+body {
+  margin: 0;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 20px; /* reduced padding for small screens */
+  box-sizing: border-box;
+}
+
+/* Main Container */
+.app-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 800px;
+  box-sizing: border-box;
+}
+
+/* Headings */
+h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 25px;
+  color: #4a4a4a;
+}
+
+h3 {
+  margin-top: 25px;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+/* Form Inputs and Select */
+input, select {
+  padding: 10px;
+  margin: 5px 10px 15px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+  width: calc(100% - 20px); /* Full width on small screens */
+  max-width: 200px; /* Default max width */
+  box-sizing: border-box;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #646cff;
+  box-shadow: 0 0 5px rgba(100, 108, 255, 0.3);
+}
+
+/* Buttons */
+button {
+  padding: 10px 18px;
+  margin-top: 10px;
+  background-color: #646cff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s, transform 0.2s;
+  width: 100%; /* Full width on small screens */
+  max-width: 150px;
+}
+
+button:hover {
+  background-color: #535bf2;
+  transform: translateY(-2px);
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  overflow-x: auto; /* horizontal scroll on small screens */
+  display: block;
+}
+
+th, td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+  min-width: 120px;
+}
+
+th {
+  background-color: #f0f0ff;
+}
+
+tr:hover {
+  background-color: #f9f9ff;
+}
+
+/* Monthly Report */
+.report {
+  background-color: #f8f8ff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.report h4 {
+  margin: 0 0 10px 0;
+  color: #333;
+}
+
+.report ul {
+  padding-left: 20px;
+}
+
+.report li {
+  margin-bottom: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.8em;
+  }
+
+  h3 {
+    font-size: 1.2em;
+  }
+
+  input, select, button {
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .app-container {
+    padding: 15px;
+  }
+
+  table th, table td {
+    padding: 10px 8px;
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  h3 {
+    font-size: 1em;
+  }
+
+  input, select, button {
+    font-size: 0.9em;
+  }
+
+  table th, table td {
+    padding: 8px 5px;
+    font-size: 0.85em;
+  }
+}
