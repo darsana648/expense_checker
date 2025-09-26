@@ -8,9 +8,16 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Quick-start development settings - unsuitable for production
-SECRET_KEY = 'django-insecure-hg6j9&%wf9kfws0h3x#ztm$55mt$60y)em*d70&f8e)wbw2$n4'
-DEBUG = True
+from decouple import config
+import dj_database_url
+
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=False, cast=bool)
+
+DATABASES = {
+    'default': dj_database_url.config(default=config('DATABASE_URL'))
+}
+
 ALLOWED_HOSTS = ['.onrender.com', 'localhost']
 
 

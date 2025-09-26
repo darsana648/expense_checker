@@ -1,0 +1,15 @@
+# Ignore environment file
+.env
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Virtual environment
+myenv/
+
+# Django static files (optional)
+staticfiles/
+
+# Database (if using sqlite locally)
+db.sqlite3
