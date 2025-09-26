@@ -97,9 +97,12 @@ LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
+import os
+BASE_DIR = Path(__file__).resolve().parent.parent
+STATIC_URL = '/static/'
 
-# Static files
-STATIC_URL = 'static/'
+# Add this for deployment
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

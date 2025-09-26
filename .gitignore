@@ -9,7 +9,9 @@ __pycache__/
 myenv/
 
 # Django static files (optional)
-staticfiles/
+# Ignore collected static files
+/staticfiles/
+
 
 # Database (if using sqlite locally)
 db.sqlite3
