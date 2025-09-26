@@ -20,14 +20,14 @@ function App() {
 useEffect(() => {
   axios.get(`${API_BASE}/users/`)
     .then(res => {
-      console.log("Users:", res.data); // <-- DEBUG
+      console.log("Users:", res.data); 
       setUsers(res.data);
     })
     .catch(err => console.log("Users Error:", err));
 
   axios.get(`${API_BASE}/categories/`)
     .then(res => {
-      console.log("Categories:", res.data); // <-- DEBUG
+      console.log("Categories:", res.data); 
       setCategories(res.data);
     })
     .catch(err => console.log("Categories Error:", err));
@@ -37,33 +37,30 @@ useEffect(() => {
 
 
 
-  // Load expenses when user changes
   useEffect(() => {
     if (selectedUser) {
-      axios.get(`${API_BASE}/expenses/?user_id=${selectedUser}`)  // <-- trailing slash
+      axios.get(`${API_BASE}/expenses/?user_id=${selectedUser}`)  
            .then(res => setExpenses(res.data));
     }
   }, [selectedUser]);
 
-  // Add new expense
   const addExpense = () => {
     if (!selectedUser || !category || !amount || !date) return alert("Fill all fields");
-    axios.post(`${API_BASE}/expenses/create/`, {   // <-- trailing slash
+    axios.post(`${API_BASE}/expenses/create/`, {   
       user: selectedUser,
       category,
       amount,
       date
     }).then(() => {
-      axios.get(`${API_BASE}/expenses/?user_id=${selectedUser}`) // <-- trailing slash
+      axios.get(`${API_BASE}/expenses/?user_id=${selectedUser}`) 
            .then(res => setExpenses(res.data));
       setAmount(""); setCategory(""); setDate("");
     });
   }
 
-  // Fetch monthly report
   const fetchReport = () => {
     if (!selectedUser || !reportYear || !reportMonth) return alert("Select user, year, month");
-    axios.get(`${API_BASE}/reports/monthly_summary/`, {  // <-- trailing slash
+    axios.get(`${API_BASE}/reports/monthly_summary/`, {
       params: { user_id: selectedUser, year: reportYear, month: reportMonth }
     }).then(res => setReport(res.data));
   }
@@ -72,7 +69,7 @@ useEffect(() => {
   <div className="app-container">
     <h2>Smart Expense Tracker</h2>
 
-    {/* User Selector */}
+   
     <div>
       <label>User: </label>
       <select value={selectedUser} onChange={e => setSelectedUser(e.target.value)}>
@@ -81,7 +78,7 @@ useEffect(() => {
       </select>
     </div>
 
-    {/* Expense Form */}
+  
     <h3>Add Expense</h3>
     <div>
       <select value={category} onChange={e => setCategory(e.target.value)}>
@@ -93,7 +90,7 @@ useEffect(() => {
       <button onClick={addExpense}>Add Expense</button>
     </div>
 
-    {/* Expense List */}
+  
     <h3>Expenses</h3>
     <table>
       <thead>
@@ -114,7 +111,6 @@ useEffect(() => {
       </tbody>
     </table>
 
-    {/* Monthly Report */}
     <h3>Monthly Report</h3>
     <div>
       <input type="text" placeholder="Year (YYYY)" value={reportYear} onChange={e => setReportYear(e.target.value)} />
