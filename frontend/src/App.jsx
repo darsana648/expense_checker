@@ -13,8 +13,7 @@ function App() {
   const [reportYear, setReportYear] = useState("");
   const [reportMonth, setReportMonth] = useState("");
   
-  const API_BASE = "https://expense-checker-3.onrender.com/api";
-
+  const API_BASE = "http://127.0.0.1:8000/api";
 
 
 
