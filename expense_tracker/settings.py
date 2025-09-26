@@ -76,8 +76,9 @@ DATABASES = {
 
 # CORS configuration
 CORS_ALLOWED_ORIGINS = [
-    "https://smart-expense-checker.onrender.com",
+    "https://smart-expense-checker.onrender.com",  # React frontend URL
 ]
+
 
 
 
